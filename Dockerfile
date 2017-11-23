@@ -16,5 +16,10 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
-CMD [ "npm", "start" ]
+# EXPOSE 8080
+# Expose is not supported in heroku, we will use gunicon instead
+CMD gunicorn --bind localhost:$PORT wsgi 
+
+CMD npm start 
+# you can also write like
+# CMD [ "npm", "start" ]
