@@ -16,6 +16,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+ENV PORT=3200
+
 # EXPOSE 8080
 # Expose is not supported in heroku, we will use gunicon instead
 CMD gunicorn --bind localhost:$PORT wsgi 

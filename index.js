@@ -3,7 +3,7 @@
 const express = require('express');
 
 // Constants
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const HOST = '0.0.0.0';
 
 // App
@@ -14,4 +14,4 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Running on http://${HOST}:${PORT}`,process.env);
