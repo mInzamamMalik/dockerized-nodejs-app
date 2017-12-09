@@ -1,0 +1,26 @@
+version: "3"
+services:
+  web:
+    image: node-web-app
+    build: ./
+    ports: 
+      - "3000:3200"
+    # - "host:container" 
+    volumes: 
+      - ./:/usr/app/src 
+      - /usr/app/src/node_modules
+    # - hostPath:containerPath
+  
+  
+  #   depends_on:
+  #     - "mongo"
+
+  # mongo:
+  #   image: "mongo"
+  #   ports:
+  #     - "27017:270171"
+
+  # adminmongo:
+  #   image: "mrvautin/adminmongo"
+  #   ports:
+  #     - "1234:12345" 
